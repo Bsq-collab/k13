@@ -1,5 +1,5 @@
 '''
-displays images procured via API call,
+
 along with a bit of explanation of the image content.
 (You need only 2 files to accomplish this.)
 Store your work in the workshop under 13_rest, as lastF
@@ -22,11 +22,17 @@ def root():
     print "\n\n\n ~~~~~~~~~~~~~~ printing info()~~~~~~~~~~~~~~~~~~~~"
     #print data.info()
     print "\n\n\n ~~~~~~~~~~~~~~ printing read()"
-    print data.read()
     string= data.read()
+    print string
     d= json.loads(string)
-    return render_template("temp.html", Pic=d[url])
+    print "adeeb thinks he's cool"
+   # d= str(d);
+    return render_template("temp.html", Pic=d["url"],explanation=d["explanation"])
+#return data.read()
+    '''
 
+
+'''
 
 if __name__ == "__main__":
     app.debug = True

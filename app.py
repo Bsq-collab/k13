@@ -1,8 +1,8 @@
 '''
-
-along with a bit of explanation of the image content.
-(You need only 2 files to accomplish this.)
-Store your work in the workshop under 13_rest, as lastF
+Bayan Berri
+SoftDev1 p7
+hw13--  A RESTful Journey skyward
+2017-11-10
 
 '''
 from flask import Flask, render_template, session, url_for, redirect, request

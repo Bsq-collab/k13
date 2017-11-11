@@ -9,11 +9,7 @@ from flask import Flask, render_template, session, url_for, redirect, request
 import urllib2
 import json
 
-
 app = Flask(__name__)
-
-#data= data.read()
-
 
 @app.route("/")
 def root():
@@ -27,12 +23,14 @@ def root():
     print string
     d= json.loads(string)
 
-    return render_template("temp.html", Pic=d["url"],explanation=d["explanation"])
-#return data.read()
-    '''
+    currencyKey= urllib2.urlopen("http://apilayer.net/api/live?access_key=0fec2f60496646d29dcf96603bcc07f0")
+    currstr=currencyKey.read()
+    dictionary=json.loads(currstr)
+    newdict= dictionary["quotes"]
+
+    return render_template("temp.html", Pic=d["url"],explanation=d["explanation"],di=newdict)
 
 
-'''
 
 if __name__ == "__main__":
     app.debug = True

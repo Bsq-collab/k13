@@ -9,5 +9,29 @@
     <p>
       {{explanation}}
     </p>
-    </body>
+    This is a table of currency conversions: <br>
+    <table border=2>
+      <tr>
+        <td>
+          Key
+        </td>
+        <td>
+          Value
+        </td>
+      </tr>
+
+      {% for key in di %}
+      <tr>
+        <td>
+          {{key}}
+        </td>
+        <td>
+          {{di[key]}}
+        </td>
+      </tr>
+      {% endfor %}
+
+    </table>
+  </body>
+
 </html>
